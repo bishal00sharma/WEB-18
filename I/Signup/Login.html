@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<style>
+    #main{
+        width: 40%;
+        height: 100px;
+        margin: auto;
+        border: 1px solid red;
+        text-align: center;
+        margin-top: 50px;
+        padding: 15px;
+        
+    }
+    label,input{
+        font-size: 20px;display: block;
+       
+    }
+    input{
+        margin: auto;
+        
+    }
+    button{
+       margin-left: 710px;
+       padding: 10px 30px;
+       border: 1px solid red;
+       border-radius: 5px;
+    }
+</style>
+<body>
+    <div id="main">
+        <form action="" id="formm">
+        <label for="">Enter email</label>
+        <input type="password" id="ema">
+        <label for="">Password</label>
+        <input type="text" id="pass">
+    </form>
+    </div>
+    <button id="butt">Login</button>
+
+</body>
+</html>
+<script>
+           var a =JSON.parse(localStorage.getItem("User"))
+        
+
+           var d=document.querySelector("#formm");
+           document.querySelector("#butt").addEventListener("click",sub)
+           function sub(){
+            var e=d.ema.value;
+            var p=d.pass.value;
+            if(e==a.user_email){
+                   if(a.user_password==p){
+                       alert("Login Successful");
+                   }else{
+                    alert("Enter Correct details");
+                   }
+               }else{
+                    alert("Enter Correct details");
+                   }
+           
+           }
+
+
+           
+
+           
+</script>

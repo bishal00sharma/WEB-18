@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+</head>
+<style>
+    input{
+        display: block;
+        margin: auto;
+        text-align: center;
+        font-size: 20px;
+    }label{
+        font-size: 20px;
+    }
+    #container{
+        width: 25%;
+        height: 350px;
+        border-radius: 10px;
+        margin: auto;
+        text-align: center;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+        padding-top: 20px;
+    }
+    img{
+        padding-left: 700px;
+    }
+    button{
+        padding: 15px 30px;
+        border-radius: 5px;
+        border: 1px solid red;
+        margin-top: 10px;
+    }a{
+        text-decoration: none;
+    }
+</style>
+<body>
+    <img src="https://sso.masaischool.com/brand_dark.svg" alt="">
+    <div id="container">
+        <form action="" id="form">
+            <label for="">Full Name</label>
+            <input id="name" type="text" placeholder="Enter your full name">
+            <br>
+            <label for="">Email</label>
+            <input id="email" type="password" placeholder="Enter your email id">
+            <br>
+            <label for="">Password</label>
+            <input id="password" type="text" placeholder="Enter Password">
+            <br>
+           
+            
+        </form>
+        <button id="btn"><a href="Login.html">Submit</a></button>
+    </div>
+</body>
+</html>
+<script>
+    var a=document.querySelector("#form")
+   document.querySelector("#btn").addEventListener("click",myFunction);
+          
+   function myFunction(){
+       var userData={
+       user_name:a.name.value,
+           user_email:a.email.value,
+           user_password:a.password.value,
+       }
+    
+           
+
+           localStorage.setItem("User",JSON.stringify(userData))
+           console.log(userData)
+           
+           
+   }
+</script>
