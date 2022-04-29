@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="investorForm">
+             <input type="text" id="namee" placeholder="Enter name">
+             <input type="text" id="urll" placeholder="Enter URL">
+             <input type="text" id="logoo" placeholder="Logo">
+             <input type="text" id="rolee" placeholder="Enter role">
+             <input type="submit">
+    </div>
+</body>
+</html>
+<script>
+    var a=document.querySelector("#investorForm");
+    a.addEventListener("submit",myFunction)
+    var investorArr=JSON.parse(localStorage.getItem("investorDataKey"))||[]
+
+
+    function myFunction(){
+        event.preventDefault();
+      
+         var investorObj={
+             name:a.namee.value,
+             url:a.urll.value,
+             logo:a.logoo.value,
+             role:a.rolee.value,
+
+
+         }
+         investorArr.push(investorObj)
+         localStorage.setItem("investorDataKey",JSON.stringify(investorArr));
+         
+
+    }
+</script>
